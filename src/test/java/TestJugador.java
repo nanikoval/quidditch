@@ -54,7 +54,7 @@ public class TestJugador {
 
     @Test
     void nivelDeManejoDeEscoba(){
-        assertEquals(buscador.nivelDeManejoDeEscoba(), 3.0);
+        assertEquals(buscador.nivelDeManejoDeEscoba(), 0.3333333333333333);
     }
 
     @Test
@@ -64,7 +64,7 @@ public class TestJugador {
 
     @Test
     void habilidadJugador(){
-        assertEquals(cazador.habilidadJugador(),280.0);
+        assertEquals(cazador.habilidadJugador(),210.0);
     }
 
     @Test
