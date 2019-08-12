@@ -1,6 +1,6 @@
 public abstract class Escoba {
-    private Integer velocidadDefault=0;
-    private String modelo;
+    protected Integer velocidadDefault=0;
+    protected String modelo;
 
     public Escoba(String modelo){
         this.modelo=modelo;

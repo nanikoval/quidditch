@@ -64,4 +64,6 @@ public class TestEquipo {
         assertEquals(equipo1.getPuntos(),150);
     }
 
+
+
 }

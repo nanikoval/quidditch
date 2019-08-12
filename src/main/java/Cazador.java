@@ -47,9 +47,7 @@ public class Cazador extends Jugador {
     public Boolean esBlancoUtil(){
         return this.tieneLaQuaffle();
     }
-    public void pierdeLaQuaffle(){
-        this.tieneLaQuaffle=false;
-    }
+
 
     //4c  los ​cazadores, si tenían la quaffle, ​la pierden​
     public void esGolpeadoPorUnaBludger(){

@@ -85,4 +85,8 @@ public abstract class Jugador {
     }
 
     public abstract void juega();
+
+    public void pierdeLaQuaffle(){
+        this.tieneLaQuaffle=false;
+    }
 }

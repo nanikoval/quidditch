@@ -14,7 +14,7 @@ public class Buscador extends Jugador {
 
     public Buscador(Equipo equipo, Double skill, Double peso, Escoba escoba, Double nivelDeReflejos,
                     Double nivelDeVision) {
-        super(equipo, peso, skill, escoba, nivelDeReflejos);
+        super(equipo, skill, peso, escoba, nivelDeReflejos);
         this.nivelDeVision = nivelDeVision;
     }
 
