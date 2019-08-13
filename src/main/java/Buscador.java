@@ -7,6 +7,7 @@ public class Buscador extends Jugador {
     private Double nivelDeVision;
     private Integer kilometrosRecorridos=0;
     private Integer turnosContinuos=0;
+    private Boolean aturdido=true;
 
     public Integer getTurnosContinuos() {
         return turnosContinuos;
@@ -67,6 +68,7 @@ public class Buscador extends Jugador {
         super.esGolpeadoPorUnaBludger();
         this.reiniciaLaBusqueda();
         turnosContinuos=0;
+        aturdido=true;
     }
     public void reiniciaLaBusqueda(){
         kilometrosRecorridos=0;
@@ -75,6 +77,7 @@ public class Buscador extends Jugador {
     public void juega(){
         this.persiguiendoLaSnitch();
         turnosContinuos=turnosContinuos+1;
+        aturdido=false;
     }
 
     public void setTurnosContinuos(Integer turnosContinuos) {
@@ -83,5 +86,9 @@ public class Buscador extends Jugador {
 
     public Integer getKilometrosRecorridos() {
         return kilometrosRecorridos;
+    }
+
+    public Boolean estaAturdido(){
+        return aturdido==true;
     }
 }
