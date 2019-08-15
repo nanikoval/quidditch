@@ -8,6 +8,7 @@ public class Buscador extends Jugador {
     private Integer kilometrosRecorridos=0;
     private Integer turnosContinuos=0;
     private Boolean aturdido=true;
+    private String accion="persiguiendo la snitch";
 
     public Integer getTurnosContinuos() {
         return turnosContinuos;
@@ -78,6 +79,8 @@ public class Buscador extends Jugador {
         this.persiguiendoLaSnitch();
         turnosContinuos=turnosContinuos+1;
         aturdido=false;
+        accion="buscando la snitch";
+
     }
 
     public void setTurnosContinuos(Integer turnosContinuos) {

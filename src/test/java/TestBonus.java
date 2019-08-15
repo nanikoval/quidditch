@@ -50,6 +50,7 @@ class TestBonus {
         assertEquals(buscador.getKilometrosRecorridos(), 0);
     }
 
+
     @Test
     void elBuscadorDejaDeEstarAturdido(){
         buscador.juega();
