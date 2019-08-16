@@ -8,6 +8,11 @@ public class Buscador extends Jugador {
     private Integer kilometrosRecorridos=0;
     private Integer turnosContinuos=0;
     private Boolean aturdido=true;
+    private Accion accion = new BuscandoLaSnitch();
+
+    public void setAccion(Accion accion) {
+        this.accion = accion;
+    }
 
     public Integer getTurnosContinuos() {
         return turnosContinuos;
@@ -43,25 +48,12 @@ public class Buscador extends Jugador {
         return getRandomElement(rangoBuscador)< super.habilidadJugador()+getTurnosContinuos();
     }
 
-    /*3 Si está ​persiguiendo la snitch​, debe recorrer 5.000 kms para poder atraparla. En cada turno recorre una cantidad
-    de kms igual a su velocidad / 1,6. Una vez que la atrapó, aumenta sus skills 10 puntos y su equipo gana 150 puntos.*/
-
-    public Boolean persiguiendoLaSnitch(){
-        return kilometrosRecorridos==5000;
-    }
-
     public void setKilometrosRecorridos(Integer kilometrosRecorridos) {
         this.kilometrosRecorridos = kilometrosRecorridos;
     }
 
-    public void atrapoLaSnitch(){
-        skill=skill+10;
-        equipo.atrapoLaSnitch();
-
-    }
-
     public Boolean esBlancoUtil(){
-        return persiguiendoLaSnitch()||kilometrosRecorridos>4000;    }
+        return this.accion == new PersiguiendoLaSnitch() || kilometrosRecorridos > 4000;    }
 
     //4c si es golpeadoPorUnaBludger() reinicia la busqueda
     public void esGolpeadoPorUnaBludger(){
@@ -75,7 +67,7 @@ public class Buscador extends Jugador {
     }
 
     public void juega(){
-        this.persiguiendoLaSnitch();
+        this.accion.juega(this);
         turnosContinuos=turnosContinuos+1;
         aturdido=false;
     }
@@ -90,5 +82,10 @@ public class Buscador extends Jugador {
 
     public Boolean estaAturdido(){
         return aturdido==true;
+    }
+
+    public void incrementaSkill(){
+        skill = skill+10;
+
     }
 }
