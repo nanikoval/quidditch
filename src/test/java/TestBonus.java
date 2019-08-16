@@ -51,7 +51,6 @@ class TestBonus {
     @Test
     void elBuscadorDejaDeEstarAturdido(){
         buscador.juega();
-        buscador.persiguiendoLaSnitch();
         assertFalse(buscador.estaAturdido());
     }
 }

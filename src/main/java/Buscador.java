@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 
 public class Buscador extends Jugador {
     private Double nivelDeVision;
-    private Integer kilometrosRecorridos=0;
+    private double kilometrosRecorridos=0;
     private Integer turnosContinuos=0;
     private Boolean aturdido=true;
     private Accion accion = new BuscandoLaSnitch();
@@ -13,6 +13,8 @@ public class Buscador extends Jugador {
     public void setAccion(Accion accion) {
         this.accion = accion;
     }
+
+
 
     public Integer getTurnosContinuos() {
         return turnosContinuos;
@@ -53,7 +55,7 @@ public class Buscador extends Jugador {
     }
 
     public Boolean esBlancoUtil(){
-        return this.accion == new PersiguiendoLaSnitch() || kilometrosRecorridos > 4000;    }
+        return this.getAccion() == new PersiguiendoLaSnitch() || kilometrosRecorridos > 4000;    }
 
     //4c si es golpeadoPorUnaBludger() reinicia la busqueda
     public void esGolpeadoPorUnaBludger(){
@@ -66,17 +68,22 @@ public class Buscador extends Jugador {
         kilometrosRecorridos=0;
     }
 
+    public Double kmsRecorridosPorTurno() {
+        return this.velocidadJugador()/1.6;
+    }
+
     public void juega(){
-        this.accion.juega(this);
+        this.getAccion().juega(this);
         turnosContinuos=turnosContinuos+1;
         aturdido=false;
+        kilometrosRecorridos = kilometrosRecorridos + kmsRecorridosPorTurno();
     }
 
     public void setTurnosContinuos(Integer turnosContinuos) {
         this.turnosContinuos = turnosContinuos;
     }
 
-    public Integer getKilometrosRecorridos() {
+    public Double getKilometrosRecorridos() {
         return kilometrosRecorridos;
     }
 
@@ -87,5 +94,9 @@ public class Buscador extends Jugador {
     public void incrementaSkill(){
         skill = skill+10;
 
+    }
+
+    public Accion getAccion() {
+        return accion;
     }
 }
