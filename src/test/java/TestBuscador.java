@@ -2,6 +2,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestBuscador {
     private Equipo equipo;
@@ -29,9 +30,4 @@ public class TestBuscador {
         assertEquals(buscador.getKilometrosRecorridos(), 0);
     }
 
-    @Test
-    void elBuscadorAtrapoLaSnitch(){
-        buscador.atrapoLaSnitch();
-        assertEquals(buscador.getSkill(), 20.5);
-    }
 }

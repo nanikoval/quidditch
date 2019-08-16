@@ -5,13 +5,17 @@ import java.util.stream.IntStream;
 
 public class Buscador extends Jugador {
     private Double nivelDeVision;
-    private Integer kilometrosRecorridos=0;
+    private Double kilometrosRecorridos=0.0;
     private Integer turnosContinuos=0;
     private Boolean aturdido=true;
     private Accion accion=new BuscandoLaSnitch();
 
     public void setAccion(Accion accion) {
         this.accion = accion;
+    }
+
+    public Accion getAccion() {
+        return accion;
     }
 
     public Integer getTurnosContinuos() {
@@ -50,7 +54,7 @@ public class Buscador extends Jugador {
 
 
 
-    public void setKilometrosRecorridos(Integer kilometrosRecorridos) {
+    public void setKilometrosRecorridos(Double kilometrosRecorridos) {
         this.kilometrosRecorridos = kilometrosRecorridos;
     }
 
@@ -70,7 +74,11 @@ public class Buscador extends Jugador {
         aturdido=true;
     }
     public void reiniciaLaBusqueda(){
-        kilometrosRecorridos=0;
+        kilometrosRecorridos=0.0;
+    }
+
+    public Double kmsRecorridosPorTurno(){
+        return this.velocidadJugador()/1.6;
     }
 
 
@@ -78,6 +86,7 @@ public class Buscador extends Jugador {
         this.accion.juega(this);
         turnosContinuos=turnosContinuos+1;
         aturdido=false;
+        kilometrosRecorridos=kilometrosRecorridos+kmsRecorridosPorTurno();
 
 
     }
@@ -86,7 +95,7 @@ public class Buscador extends Jugador {
         this.turnosContinuos = turnosContinuos;
     }
 
-    public Integer getKilometrosRecorridos() {
+    public Double getKilometrosRecorridos() {
         return kilometrosRecorridos;
     }
 
