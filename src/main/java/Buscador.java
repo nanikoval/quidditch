@@ -63,7 +63,7 @@ public class Buscador extends Jugador {
     public Boolean esBlancoUtil(){
         return persiguiendoLaSnitch()||kilometrosRecorridos>4000;    }
 
-    //4c si es golpeadoPorUnaBludger() reinicia la busqueda
+    //4c si es golpeadoPorUnaBludger() reinicia la busqueda y queda aturdido
     public void esGolpeadoPorUnaBludger(){
         super.esGolpeadoPorUnaBludger();
         this.reiniciaLaBusqueda();
