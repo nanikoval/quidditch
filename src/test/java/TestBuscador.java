@@ -29,5 +29,4 @@ public class TestBuscador {
         assertEquals(buscador.getTurnosContinuos(),0);
         assertEquals(buscador.getKilometrosRecorridos(), 0);
     }
-
 }
