@@ -4,5 +4,4 @@ public class PersiguiendoLaSnitch implements Accion {
             buscador.setAccion(new AtrapaLaSnitch());
         }
     }
-
 }

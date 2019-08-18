@@ -52,8 +52,6 @@ public class Buscador extends Jugador {
         return getRandomElement(rangoBuscador)< super.habilidadJugador()+getTurnosContinuos();
     }
 
-
-
     public void setKilometrosRecorridos(Double kilometrosRecorridos) {
         this.kilometrosRecorridos = kilometrosRecorridos;
     }
@@ -77,18 +75,15 @@ public class Buscador extends Jugador {
         kilometrosRecorridos=0.0;
     }
 
-    public Double kmsRecorridosPorTurno(){
+    public Double kmsRecorridosPorTurno() {
         return this.velocidadJugador()/1.6;
     }
 
-
     public void juega(){
-        this.accion.juega(this);
+        this.getAccion().juega(this);
         turnosContinuos=turnosContinuos+1;
         aturdido=false;
-        kilometrosRecorridos=kilometrosRecorridos+kmsRecorridosPorTurno();
-
-
+        kilometrosRecorridos = kilometrosRecorridos + kmsRecorridosPorTurno();
     }
 
     public void setTurnosContinuos(Integer turnosContinuos) {
@@ -101,6 +96,15 @@ public class Buscador extends Jugador {
 
     public Boolean estaAturdido(){
         return aturdido==true;
+    }
+
+    public void incrementaSkill(){
+        skill = skill+10;
+
+    }
+
+    public Accion getAccion() {
+        return accion;
     }
 }
 
