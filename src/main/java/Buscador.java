@@ -98,13 +98,8 @@ public class Buscador extends Jugador {
         return aturdido==true;
     }
 
-    public void incrementaSkill(){
-        skill = skill+10;
 
-    }
 
-    public Accion getAccion() {
-        return accion;
-    }
+
 }
 
