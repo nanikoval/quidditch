@@ -1,10 +1,12 @@
+package app.model;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Equipo {
     private Integer puntos=0;
     private List<Jugador> jugadores=new ArrayList<>();
-
+    public Equipo (){};
     public List<Jugador> getJugadores() {
         return jugadores;
     }
@@ -22,12 +24,12 @@ public class Equipo {
 
     //3 El equipo gana 10 puntos por meter gol
     public void meteGol(){
-        puntos=puntos+10;
+        setPuntos(getPuntos() +10);
     }
 
     //atrapoLaSnitch
     public void atrapoLaSnitch(){
-        puntos=puntos+150;
+        setPuntos(getPuntos() +150);
     }
 
     public Boolean noTieneLaQuaffle(){

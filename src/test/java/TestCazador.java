@@ -1,3 +1,7 @@
+import app.model.Cazador;
+import app.model.Equipo;
+import app.model.Guardian;
+import app.model.SaetaDeFuego;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -26,13 +30,13 @@ public class TestCazador {
     @Test
     void elCazadorMeteGol(){
         cazador.meteGol();
-        assertEquals(cazador.getSkill(),25.0);
+        assertEquals(cazador.getSkill().doubleValue(),25.0);
     }
 
     @Test
     void elCazadorEsBloqueadoPorUnGolpeador(){
         cazador.esBloqueadoX(guardian);
-        assertEquals(cazador.getSkill(), 18.0);
+        assertEquals(cazador.getSkill().doubleValue(), 18.0);
     }
 
     @Test

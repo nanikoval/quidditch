@@ -1,3 +1,4 @@
+import app.model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -46,8 +47,8 @@ class TestBonus {
     void buscadorEsGolpeadoPorUnaBludger(){
         buscador.juega();
         buscador.esGolpeadoPorUnaBludger();
-        assertEquals(buscador.getTurnosContinuos(),0);
-        assertEquals(buscador.getKilometrosRecorridos(), 0);
+        assertEquals(buscador.getTurnosContinuos().intValue(),0);
+        assertEquals(buscador.getKilometrosRecorridos().intValue(), 0);
     }
 
 

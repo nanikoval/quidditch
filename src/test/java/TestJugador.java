@@ -1,3 +1,4 @@
+import app.model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -54,23 +55,23 @@ public class TestJugador {
 
     @Test
     void nivelDeManejoDeEscoba(){
-        assertEquals(buscador.nivelDeManejoDeEscoba(), 0.3333333333333333);
+        assertEquals(buscador.nivelDeManejoDeEscoba().doubleValue(), 0.3333333333333333);
     }
 
     @Test
     void velocidadJugador(){
-        assertEquals(guardian.velocidadJugador(), 66.66666666666666);
+        assertEquals(guardian.velocidadJugador().doubleValue(), 66.66666666666666);
     }
 
     @Test
     void habilidadJugador(){
-        assertEquals(cazador.habilidadJugador(),210.0);
+        assertEquals(cazador.habilidadJugador().doubleValue(),210.0);
     }
 
     @Test
     void buscadorBloqueaAcazador(){
         guardian.bloqueoA(cazador);
-        assertEquals(guardian.skill,30.0);
+        assertEquals(guardian.getSkill().doubleValue(),30.0);
     }
 
 }

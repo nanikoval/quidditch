@@ -1,3 +1,5 @@
+package app.model;
+
 public abstract class Escoba {
     protected Integer velocidadDefault=0;
     protected String modelo;

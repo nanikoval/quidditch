@@ -1,3 +1,5 @@
+package app.model;
+
 public class BuscandoLaSnitch implements Accion {
   
     public void juega(Buscador buscador){

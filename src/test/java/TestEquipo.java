@@ -1,3 +1,5 @@
+import app.model.Equipo;
+import app.model.Jugador;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -42,13 +44,13 @@ public class TestEquipo {
     void promedioEquipo(){
         when(j1.habilidadJugador()).thenReturn(300.0);
         when(j2.habilidadJugador()).thenReturn(300.0);
-        assertEquals(equipo1.promedioEquipo(),300.0);
+        assertEquals(equipo1.promedioEquipo().doubleValue(),300.0);
     }
 
     @Test
     void elEquipoMeteGol(){
         equipo1.meteGol();
-        assertEquals(equipo1.getPuntos(), 10);
+        assertEquals(equipo1.getPuntos().intValue(), 10);
     }
 
     @Test
@@ -61,7 +63,7 @@ public class TestEquipo {
     @Test
     void unoDelEquipoAtrapoLaSnitch(){
         equipo1.atrapoLaSnitch();
-        assertEquals(equipo1.getPuntos(),150);
+        assertEquals(equipo1.getPuntos().intValue(),150);
     }
 
 

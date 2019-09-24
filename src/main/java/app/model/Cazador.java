@@ -1,3 +1,5 @@
+package app.model;
+
 public class Cazador extends Jugador {
     private Double punteria;
     private Double fuerza;

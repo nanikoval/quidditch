@@ -1,3 +1,5 @@
+package app.model;
+
 public class SaetaDeFuego extends Escoba {
 
     public SaetaDeFuego(String modelo){

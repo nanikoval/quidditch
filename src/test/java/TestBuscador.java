@@ -1,3 +1,6 @@
+import app.model.Buscador;
+import app.model.Equipo;
+import app.model.Nimbus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,14 +22,14 @@ public class TestBuscador {
     @Test
     void buscadorJuega(){
         buscador.juega();
-        assertEquals(buscador.getTurnosContinuos(), 1);
+        assertEquals(buscador.getTurnosContinuos().intValue(), 1);
     }
 
     @Test
     void buscadorEsGolpeado(){
         buscador.juega();
         buscador.esGolpeadoPorUnaBludger();
-        assertEquals(buscador.getTurnosContinuos(),0);
-        assertEquals(buscador.getKilometrosRecorridos(), 0);
+        assertEquals(buscador.getTurnosContinuos().intValue(),0);
+        assertEquals(buscador.getKilometrosRecorridos().intValue(), 0);
     }
 }

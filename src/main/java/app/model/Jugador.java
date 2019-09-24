@@ -1,3 +1,5 @@
+package app.model;
+
 public abstract class Jugador {
     protected Double skill;
     protected Double peso;

@@ -1,3 +1,7 @@
+import app.model.Equipo;
+import app.model.Golpeador;
+import app.model.Guardian;
+import app.model.SaetaDeFuego;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -27,6 +31,6 @@ public class TestGolpeador {
     @Test
     void elGolpeadorGolpeaConUnaBludgerAlGuardian(){
         golpeador.golpeaConUnaBludgerA(guardian);
-        assertEquals(golpeador.getSkill(), 31.0);
+        assertEquals(golpeador.getSkill().doubleValue(), 31.0);
     }
 }
